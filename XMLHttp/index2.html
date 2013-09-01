@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>NYC Open 311 Data Parser (XmlHttp)</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../scripts/xmlHttpRequest.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript">
+        var query = getParameterByName("q");
+        var urlString = formatUrl(query);
+
+        ajax("GET", urlString, "divRes");
+    </script>
+</head>
+<body>
+    <div id="divRes"></div>
+</body>
+</html>

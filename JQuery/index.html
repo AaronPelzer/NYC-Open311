@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>NYC Open 311 Data Parser (JQuery)</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../scripts/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.script.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <!--[if lt IE 9]>
+        // JSON SUPPORT FOR IE 8/7/6
+        <script type="text/javascript" src="../scripts/json2.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+
+        // SUPPORT FOR INTERNET EXPLORER
+        // http://stackoverflow.com/questions/8456621/jquery-getjson-not-working-in-internet-explorer-8
+        jQuery.support.cors = true;
+
+        $(document).ready(function(){
+            
+            var urlString = formatUrl("all");
+
+            getData(urlString);
+
+            $("#category").change(function () {
+                var selected = $("#category option:selected").val()
+
+                var urlString = formatUrl(selected);
+
+                getData(urlString);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <select id="category" name="category">
+        <option value="">- Select Service -</option>
+        <option value="Transportation, Streets and Sidewalks">Transportation, Streets and Sidewalks</option>                            
+        <option value="Environment and Sanitation">Environment and Sanitation</option>                            
+        <option value="Property, Buildings and Homes">Property, Buildings and Homes</option>                            
+        <option value="Education and Employment">Education and Employment</option>                            
+        <option value="Business and Finance">Business and Finance</option>                            
+        <option value="Social Services">Social Services</option>                            
+        <option value="Health and Medicine">Health and Medicine</option>                            
+        <option value="Public Safety and Law">Public Safety and Law</option>                            
+        <option value="Government and Civil Services">Government and Civil Services</option>                                                                  
+    </select>
+
+    <div id="divRes">
+        <ul id="divList"></ul>
+    </div>
+</body>
+</html>

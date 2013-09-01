@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>NYC Open 311 Data Parser (JQuery)</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../scripts/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.script.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <!--[if lt IE 9]>
+        // JSON SUPPORT FOR IE 8/7/6
+        <script type="text/javascript" src="../scripts/json2.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var query = $.urlParam("q");
+
+        var urlString = formatUrl(query);
+
+        getData(urlString);
+    </script>
+</head>
+<body>
+    <div id="divRes">
+        <ul id="divList"></ul>
+    </div>
+</body>
+</html>

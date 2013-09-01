@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>NYC Open 311 Data Parser (XmlHttp)</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../scripts/xmlHttpRequest.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript">
+        var urlString = formatUrl("all");
+
+        ajax("GET", urlString, "divRes");
+    </script>
+</head>
+<body>
+
+    <select id="category" name="category" onchange='OnChange(this);'>
+        <option value="">- Select Service -</option>
+        <option value="Transportation, Streets and Sidewalks">Transportation, Streets and Sidewalks</option>                            
+        <option value="Environment and Sanitation">Environment and Sanitation</option>                            
+        <option value="Property, Buildings and Homes">Property, Buildings and Homes</option>                            
+        <option value="Education and Employment">Education and Employment</option>                            
+        <option value="Business and Finance">Business and Finance</option>                            
+        <option value="Social Services">Social Services</option>                            
+        <option value="Health and Medicine">Health and Medicine</option>                            
+        <option value="Public Safety and Law">Public Safety and Law</option>                            
+        <option value="Government and Civil Services">Government and Civil Services</option>                                                                  
+    </select>
+
+    <div id="divRes">
+        <ul id="divList"></ul>
+    </div>
+</body>
+</html>

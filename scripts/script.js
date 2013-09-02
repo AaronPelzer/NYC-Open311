@@ -99,6 +99,7 @@ var printObjectDisplay = function (obj) {
 var formatUrl = function (id) {
 
     // <YOUR CREDENTIALS FROM NYC OPEN DATA ACCOUNT>
+    // https://developer.cityofnewyork.us/
     var appID = "<Your Application ID>";
     var appKey = "<Your Application Key>";
 
